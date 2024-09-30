@@ -36,12 +36,13 @@ class Database {
     }
 } 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Concluido</title>
     <?php 
         $host = 'localhost';
         $db = 'escola_sql';
@@ -61,4 +62,31 @@ class Database {
 
 <!-- Início: 08:40 - Fim: 09:20, muitas alterações e criação do banco de dados foram realizadas, demorou um pouco devido a falta de atençaõ -->
 
+<body>
+<?php
+// Verifica se os dados foram enviados via GET
+if (isset($_GET['nome']) && isset($_GET['email']) && isset($_GET['idade']) && isset($_GET['curso'])){
+    // Captura os dados enviados pelo formulário
+    $nome = htmlspecialchars($_GET['nome']);
+    $idade = htmlspecialchars($_GET['email']);
+    $email = htmlspecialchars($_GET['idade']);
+    $curso = htmlspecialchars($_GET['curso']);
 
+    // Exibe os dados capturados
+    echo "<h2>Informações recebidas:</h2>";
+    echo "<p><strong>Nome:</strong> " . $nome . "<p>";
+    echo "<p><strong>E-mail:</strong> " . $idade . "<p>";
+    echo "<p><strong>Idade:</strong> " . $email . "<p>";
+    echo "<p><strong>Curso:</strong> " . $curso . "<p>";
+    // Verifica se a variável $pdo, que deve ser uma instância de PDO, está definida e é válida
+    // Prepara uma consulta SQL para selecionar as colunas 'nome', 'idade', 'email'e 'curso' da tabela 'alunos'
+    $stmt = $pdo->prepare("INSERT into alunos(nome, idade, email, curso) values ('$nome', '$email','$idade','$curso')");
+
+    // Executa a consulta preparada
+    $stmt->execute();
+} else{
+    echo "Nenhum dado foi enviado.";
+}
+?>
+
+<!--Início da inserção de dados na tabela, é preciso finaçizar a conexão -->
