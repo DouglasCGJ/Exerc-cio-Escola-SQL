@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <?php 
-        $host = 'localhost';
-        $db = 'escola_sql';
-        $user = 'Douglas';
-        $pass = '123456';
+        $host = 'localhost'; // local que vai rodar o bando de dados
+        $db = 'escola_sql'; // nome do bando de dados
+        $user = 'Douglas'; // seu usuário
+        $pass = '123456'; // senha da sua conta 
         $port = 3307; // Porta MySQL correta
-        // Inclui o arquivo da classe Database que criamos para conectar dentro da pasta php
+
+        // Inclui o arquivo da classe Database que criei para conectar dentro da pasta php
         require_once 'connection.php';
         // Cria uma instância da classe Database
         $database = new Database($host, $db, $user, $pass, $port);
@@ -22,10 +23,10 @@
 </head>
 <body>
 <?php
-    // Verifica se a variável $pdo, que deve ser uma instância de PDO, está definida e é válida
+    // Verifica se a variável $pdo, que deve ser uma instância de PDO, está tudo certo
     if ($pdo) {
         try {
-            // Prepara uma consulta SQL para selecionar as colunas 'nome', 'idade', 'email'e 'curso' da tabela 'alunos'
+            // Prepara uma consulta SQL para selecionar as colunas 'nome', 'idade', 'email'e 'curso' da tabela alunos
             $stmt = $pdo->prepare("SELECT nome, email, idade,  curso FROM alunos");
             
             // Executa a consulta preparada

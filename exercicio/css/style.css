@@ -1,14 +1,17 @@
+/* Definindo o layout do body para centralizar o formulário */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    min-height: 100vh;
 }
 
+/* Container para centralizar imagem e formulário lado a lado */
 .container {
     display: flex;
     justify-content: space-between;
@@ -16,36 +19,41 @@ body {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    max-width: 1000px;
+    max-width: 900px; /* Aumenta a largura para ajustar ambos lado a lado */
     width: 90%;
-    height: 500px;
-    overflow: hidden;
+    height: auto;
+    margin: 50px auto;
+    padding: 20px;
+    gap: 20px; /* Adiciona espaço entre a imagem e o formulário */
 }
 
+/* Ajuste da imagem */
 .image {
-    width: 50%;
-    height: 100%;
+    width: 40%; /* Reduz a largura da imagem para caber ao lado do formulário */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f9f9f9;
 }
 
 .image img {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
+    border-radius: 8px; /* Adiciona bordas arredondadas para harmonizar */
 }
 
+/* Ajuste do formulário */
 .form-container {
-    width: 50%;
-    padding: 40px;
+    width: 60%; /* Ajusta a largura do formulário */
+    padding: 0 20px; /* Espaçamento interno */
     box-sizing: border-box;
+    text-align: left; /* Alinha o formulário à esquerda */
 }
 
+/* Título do formulário */
 h2 {
     margin-bottom: 20px;
-    text-align: left;
+    text-align: left; /* Alinha o título do formulário à esquerda */
     color: #333;
 }
 
@@ -88,6 +96,119 @@ input[type="submit"]:hover {
 input:focus {
     border-color: #007BFF;
     outline: none;
+}
+
+/* Adiciona um espaçamento considerável entre o formulário e a tabela */
+.table-container {
+    width: 90%;
+    margin: 50px auto 50px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Estilo da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f48414;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+td {
+    color: #333;
+}
+
+/* Título da tabela */
+h2 {
+    text-align: left;
+    color: #333;
+}
+
+.container {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 1000px;
+    width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f48414;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+td {
+    color: #333;
+}
+.search-container {
+    margin: 30px 0 50px;
+}
+
+.search-container input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+footer {
+    background-color: #f48414;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
 }
 
 /* Término da estilização e organização 11:34, próximo passo em andamento */
